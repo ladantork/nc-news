@@ -1,0 +1,13 @@
+/* ArticlesList.css */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .articles-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    } 
+ }
+  
