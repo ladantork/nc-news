@@ -14,3 +14,13 @@ const api = axios.create({
 });
 
  }
+
+ export function getIndividualArticle(article_id) {
+    return api
+        .get(`articles/${article_id}`)
+        .then(response => response.data)
+        .catch((err) => {
+            console.log(err.message);
+            throw err;
+        });
+}

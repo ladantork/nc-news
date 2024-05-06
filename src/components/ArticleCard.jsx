@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
           <p className="article-info">
             <span>Author: {article.author}</span>
             <span>Published: {new Date(article.created_at).toLocaleDateString()}</span>
-          <a href={article.url} className="read-more" target="_blank" rel="noopener noreferrer">Read more</a>
+          
           </p>
         </div>
       </div>

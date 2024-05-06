@@ -1,0 +1,17 @@
+/* IndividualArticle.css */
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+}
+
+.article-content {
+  text-align: justify; /* Center content inside the box */
+  font-size: 1.2rem; /* Adjust font size */
+  line-height: 1.6; 
+  background-color: #f3f3f3;
+}
