@@ -34,3 +34,13 @@ export function getCommentForIndividualArticle(article_id) {
             throw err;
         });
 }
+
+export function updateArticleVote(article_id,inc_votes){
+    return api
+    .patch(`articles/${article_id}`,{inc_votes})
+    .then(response => response.data)
+    .catch((err) => {
+        console.log(err.message);
+        throw err;
+    });
+}
