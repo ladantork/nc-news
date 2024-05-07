@@ -24,3 +24,13 @@ const api = axios.create({
             throw err;
         });
 }
+
+export function getCommentForIndividualArticle(article_id) {
+    return api
+        .get(`articles/${article_id}/comments`)
+        .then(response => response.data.comments)
+        .catch((err) => {
+            console.log(err.message);
+            throw err;
+        });
+}
