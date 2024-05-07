@@ -1,54 +1,97 @@
 /* Header.css */
+:root {
+  --navbar-bg-light: #33333348; /* Default background color of the navbar */
+  --navbar-bg-dark: #1c1c1c; /* Background color of the navbar in dark mode */
+  --text-color-light: #594b4b; /* Text color in light mode */
+  --text-color-dark: #f3f3f3; /* Text color in dark mode */
+  --logo-width: 150px; /* Logo width for both light and dark mode */
+}
+
 .navbar {
-    background-color: #33333348; /* Background color of the navbar */
-    color: #594b4b; /* Text color */
-    padding: 5px 245px; /* Padding around the navbar */
-    display:flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center vertically */
-    border-radius: 20px;
-   
+  background-color: var(--navbar-bg-light);
+  color: var(--text-color-light);
+  padding: 10px 20px; /* Adjust padding for mobile */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 10px; /* Adjust spacing for mobile */
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color-light);
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.user {
+  margin-left: auto;
+}
+
+.describe {
+  text-align: center;
+  margin-top: 10px; /* Adjust margin for mobile */
+}
+
+.NC {
+  margin-top: -30px; /* Adjust margin for mobile */
+  margin-bottom: -30px; /* Adjust margin for mobile */
+}
+
+.logo {
+  width: var(--logo-width); /* Logo width */
+  height: auto; /* Auto height */
+  border-radius: 50px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .navbar {
+    padding: 10px 250px; /* Adjust padding for desktop */
   }
-  
-  .nav-links {
-    list-style-type: none; /* Remove default list style */
-    margin: 0px; /* Remove default margin */
-    padding: 0px; /* Remove default padding */
-  }
-  
+
   .nav-links li {
-    display: inline; /* Display navigation links inline */
-    margin-right: 20px; /* Add some spacing between links */
+    margin-right: 20px; /* Adjust spacing for desktop */
   }
-  
-  .nav-links li:last-child {
-    margin-right: 0; /* Remove right margin from the last link */
-  }
-  
-  .nav-links li a {
-    text-decoration: none; /* Remove underline */
-    color: #594b4b; /* Link text color */
-  }
-  
-  .nav-links li a:hover {
-    text-decoration: underline; /* Underline on hover */
-  }
-  
-  .user {
-    margin-left: auto; /* Push username to the right */
-  }
-  
-  .describe {
-    text-align: center; /* Center align the description */
-    margin-top: 20px; /* Add some top margin */
-  }
-  .NC{
-    margin-top: -60px; /* Add some top margin */
-    margin-bottom: -60px; /* Add some top margin */
-  }
+
   .logo {
-    width: 500px; /* Fixed width */
-    height: 10px; /* Adjust height as needed */
-    border-radius: 50px; /* Adjust border radius */
+    width:400px; /* Logo width for desktop */
   }
-  
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navbar-bg-light: #33333348;
+    --navbar-bg-dark: #1c1c1c;
+    --text-color-light: #594b4b;
+    --text-color-dark: #f3f3f3;
+  }
+
+  .navbar {
+    background-color: var(--navbar-bg-dark);
+    color: var(--text-color-dark);
+  }
+
+  .nav-links li a {
+    color: var(--text-color-dark);
+  }
+}
+

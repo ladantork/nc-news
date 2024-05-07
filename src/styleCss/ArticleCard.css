@@ -1,14 +1,24 @@
 /* ArticleCard.css */
+:root {
+  --article-bg-light: #f3f3f3;
+  --article-bg-dark: #333;
+  --article-text-light: #333;
+  --article-text-dark: #f3f3f3;
+  --article-link-light: #007bff;
+  --article-link-dark: #61dafb;
+}
+
+
 .article-card {
   position: relative;
   margin-bottom: 20px;
-  width: 1280px; /* Increase width */
-  height: 230px; /* Increase height */
-  background-color: #f3f3f3;
+  width: calc(100% - 20px); /* Full width minus margins */
+  height: auto; /* Let the height adjust according to content */
+  background-color: var(--article-bg-light); /* Default background color */
+  color: var(--article-text-light); /* Default text color */
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .article-card:hover {
@@ -17,53 +27,71 @@
 }
 
 .article-title {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
   margin: 0;
   padding: 10px;
-  font-size: 20px; /* Adjust font size */
+  font-size: 18px; /* Adjust font size */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .article-img {
-  position: absolute;
-  top: 50%;
-  right: -90px; /* Align to the right */
-  transform: translate(-50%, -50%);
+  margin-top: 10px;
+  text-align: center;
 }
 
 .article-img img {
-  width: 250px;
-  height: 180px;
-  object-fit: cover;
+  max-width: 100%; /* Adjust image size */
+  height: auto;
   border-radius: 10px; /* Adjust border radius */
 }
 
 .article-info {
-  position: absolute;
-  bottom: 10px;
-  left: 90px;
-  font-size: 16px;
-  color: #666;
-  
+  padding: 10px;
+  font-size: 14px;
 }
 
 .article-info span {
-  margin-right: 20px; /* Add space between author and published */
+  margin-right: 10px;
 }
 
 .read-more {
   font-size: 14px;
-  color: #007bff;
+  color: var(--article-link-light); /* Default link color */
   text-decoration: none;
 }
 
 .read-more:hover {
   text-decoration: underline;
 }
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .article-card {
+    width: calc(50% - 20px); /* Two columns with some margin */
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --article-bg-light: #f3f3f3;
+    --article-bg-dark: #333;
+    --article-text-light: #333;
+    --article-text-dark: #f3f3f3;
+    --article-link-light: #007bff;
+    --article-link-dark: #61dafb;
+  }
+
+  .article-card {
+    background-color: var(--article-bg-dark);
+    color: var(--article-text-dark);
+  }
+
+  .read-more {
+    color: var(--article-link-dark);
+  }
+}
+
 
 
 
