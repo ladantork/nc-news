@@ -44,3 +44,20 @@ export function updateArticleVote(article_id,inc_votes){
         throw err;
     });
 }
+
+export function getUser(){
+    return api
+    .get('users')
+  
+    .then(response => response.data.users.map(user => ({ name: user.name, username: user.username, avatar_url: user.avatar_url})))
+}
+
+export function postNewComment(article_id,username,body){
+    return api
+    .post(`articles/${article_id}/comments`,{username,body})
+    .then(response => response.data.comments)
+    .catch(error => {
+        console.error('Failed to post comment:', error);
+        throw error;
+    });
+}

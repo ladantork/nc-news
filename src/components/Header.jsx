@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({user}) {
   return (
     <nav className="navbar">
       <ul className="nav-links">
@@ -13,10 +13,14 @@ export default function Header() {
         </li>
       </ul>
       <h1 className="NC"><img src={logo} alt="NC News" className="logo" /></h1>
-      <p className="describe">  
-      </p>
-      <p className="user">Username</p>
-      
+      <ul className="login-links">
+      {!user && (
+    
+          <Link to="/login">Login</Link>
+       
+      )}
+      {user && <p className="user">{user.name}</p>}
+      </ul>
     </nav>
   );
 }
