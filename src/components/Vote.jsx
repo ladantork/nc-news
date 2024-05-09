@@ -7,7 +7,6 @@ export default function VoteArticle({article, setArticle}) {
   function handleVote(incVote) {
     setArticle(article => ({ ...article, votes: article.votes + incVote }));
     updateArticleVote(article.article_id, incVote)
-    // setVoteChange(currVoteChange => currVoteChange + incVote)
     .then(() => setVoteChange(currVoteChange => currVoteChange + incVote))
     .catch(error => console.error('Failed to update vote:', error));
   }
@@ -21,10 +20,13 @@ export default function VoteArticle({article, setArticle}) {
   }
 
   return (
+    <>
+    <h3>Vote this article</h3>
     <div className = "article-votes">
      <button disabled = {voteChange === 1} onClick={upVote}> + </button>
       <p>{article.votes}</p>
       <button disabled = {voteChange === -1} onClick={downVote}> - </button>
     </div>
+    </>
   );
 }

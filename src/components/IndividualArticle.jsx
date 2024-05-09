@@ -7,6 +7,7 @@ import ArticleCard from './ArticleCard';
 import '../styleCss/IndividualArticle.css'
 import '../styleCss/ArticleList.css';
 import NewComment from '../components/NewComment.jsx';
+import { Link } from 'react-router-dom';
 
 
 export default function IndividualArticle({user}) {
@@ -41,11 +42,7 @@ export default function IndividualArticle({user}) {
     if (isLoading) {
       return <h2>Loading...</h2>;
     }
-    const handleSubmitComment = (text) => {
-        // Handle the submission of the comment
-        console.log('Article ID:', article_id);
-        console.log('Comment Text:', text);
-      };
+    
   
     return (
       <>
@@ -60,10 +57,10 @@ export default function IndividualArticle({user}) {
           <CommentsAssociatedWithArticle />
           <div>
           <NewComment article_id={article_id} user={user} />
+          <Link to={`/login?article_id=${article_id}`}>Login</Link>
           </div>
         </div>
       </>
     );
   }          
 
-//  article_id={article_id} username={users.username} onSubmit={handleSubmitComment}
