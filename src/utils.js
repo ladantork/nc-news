@@ -61,3 +61,12 @@ export function postNewComment(article_id,username,body){
         throw error;
     });
 }
+
+export function deleteComment({comment_id,username}){
+    if (!comment_id) {
+        throw new Error('Comment ID is missing or invalid');
+    }
+    return api
+    .delete(`comments/${comment_id}`,{username})
+    
+}
