@@ -11,8 +11,8 @@ export default function NewComment({ article_id, user }) {
         alert('You need to login to leave a comment');
         return;
       }
-      if (article_id && body.trim() !== '') {
-        postNewComment(article_id, user.username, body)
+      if (article_id && text.trim() !== '') {
+        postNewComment(article_id, user.username, text)
           .then((comment) => {
             console.log('Comment posted:', comment);
           })

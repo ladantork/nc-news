@@ -2,7 +2,7 @@ import React from 'react';
 import '../styleCss/CommentCard.css'
 import{ useState } from 'react';
 
-export default function CommentCard({ comment, user, onDelete }) {
+export default function CommentCard({ comment, user, onDelete}) {
   const isAuthor = user && user.username === comment.author;
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -12,6 +12,7 @@ export default function CommentCard({ comment, user, onDelete }) {
           onDelete(comment.comment_id)
               .then(() => {
                   console.log('Comment successfully deleted');
+                 
               })
               .catch(error => {
                   console.error('Failed to delete comment:', error);
@@ -34,5 +35,5 @@ export default function CommentCard({ comment, user, onDelete }) {
               </button>
           )}
       </div>
-  )
+  );
 }
