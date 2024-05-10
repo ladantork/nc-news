@@ -50,6 +50,10 @@ export default function ArticlesList() {
     }
   
     return (
+      <>
+    <div className="topic-list">
+      {}
+    </div>
         <div className="article-list">
           {articlesList.map(article => (
             <Link key={article.article_id} to={`/articles/${article.article_id}`}>
@@ -57,5 +61,6 @@ export default function ArticlesList() {
             </Link>
           ))}
         </div>
-      );
+        </>
+        );
   }
