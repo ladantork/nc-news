@@ -70,3 +70,11 @@ export function deleteComment({comment_id,username}){
     .delete(`comments/${comment_id}`,{username})
     
 }
+export function getTopics() {
+    return api
+      .get('/topics')
+      .then(response => response.data.topics)
+      .catch((err) => { console.log(err.message) 
+      throw err
+  });
+  }

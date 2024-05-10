@@ -6,6 +6,7 @@ import IndividualArticle from './components/IndividualArticle';
 import './App.css';
 import Login from './components/Login'
 import { useState } from 'react';
+import TopicArticles from './components/TopicsArticle'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Header user={loggedInUserHeader} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/topics/:slug" element={<TopicArticles/>}/>
           <Route path="/articles/:article_id" element={<IndividualArticle user={loggedInUserHeader}/>} />
           <Route path="/login" element={<Login setLoggedInUserHeader={setLoggedInUserHeader} />} />
         </Routes>

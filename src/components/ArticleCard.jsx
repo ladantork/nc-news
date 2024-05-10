@@ -14,6 +14,7 @@ const ArticleCard = ({ article }) => {
           <h3 className="article-title">{article.title}</h3>
           <p className="article-info">
             <span>Author: {article.author}</span>
+            <span>Topic: {article.topic}</span>
             <span>Published: {new Date(article.created_at).toLocaleDateString()}</span>
           
           </p>
